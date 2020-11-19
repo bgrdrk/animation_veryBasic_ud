@@ -22,7 +22,6 @@ class ViewController: UIViewController {
     @IBAction func bouncePressed(_ sender: Any) {
         
         self.imageView.center = CGPoint(x: self.imageView.center.x, y: self.imageView.center.y)
-//        goUp()
         UIView.animate(withDuration: 1, animations: goUp) {_ in
             self.goDown()
         }
@@ -40,7 +39,11 @@ class ViewController: UIViewController {
 
     
     @IBAction func tempoChanged(_ sender: UISlider) {
-        print(tempoSlider.value)
+        tempo = Double(0.201 - tempoSlider.value)
+        if isPlaying {
+            timer.invalidate()
+            timer = Timer.scheduledTimer(timeInterval: tempo, target: self, selector: #selector(playAnimation), userInfo: nil, repeats: true)
+        }
     }
     
     @IBAction func nextPressed(_ sender: Any) {
@@ -54,7 +57,7 @@ class ViewController: UIViewController {
             playStopButton.setTitle("Play", for: .normal)
             isPlaying = false
         } else {
-            timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(playAnimation), userInfo: nil, repeats: true)
+            timer = Timer.scheduledTimer(timeInterval: tempo, target: self, selector: #selector(playAnimation), userInfo: nil, repeats: true)
             playStopButton.setTitle("Stop", for: .normal)
             isPlaying = true
         }
@@ -69,7 +72,6 @@ class ViewController: UIViewController {
     func nextFrame(){
         imageView.image = UIImage(named: "frame_0\(counter).gif")
         counter = counter == totalFrames ? 0 : counter + 1
-//        tempo = Double(1.0 - tempoSlider.value)
     }
     
     @objc func playAnimation(){

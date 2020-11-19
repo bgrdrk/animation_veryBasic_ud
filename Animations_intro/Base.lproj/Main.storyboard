@@ -53,7 +53,6 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oxO-9W-E6z">
                                 <rect key="frame" x="69.5" y="640" width="275" height="72"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="275" id="OZB-uD-FqV"/>
                                     <constraint firstAttribute="height" constant="72" id="ZF4-e2-vAR"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="50"/>
@@ -64,7 +63,7 @@
                                     <action selector="nextPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FpZ-xn-0G2"/>
                                 </connections>
                             </button>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.01" maxValue="0.98999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="qtr-d2-OXv">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.10000000000000001" minValue="0.01" maxValue="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="qtr-d2-OXv">
                                 <rect key="frame" x="18" y="797" width="378" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="374" id="Our-8K-yhe"/>
